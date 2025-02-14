@@ -1,56 +1,33 @@
-# hello_rpi_world2
+GPIO PWM Project Overview
+This appears to be a Raspberry Pi GPIO PWM control project structured as follows:
 
-## Description
+Project Structure
+Purpose
+The project is designed to:
 
-A brief description of the project.
+Control Raspberry Pi GPIO pins
+Generate PWM (Pulse Width Modulation) signals
+Directly access hardware registers without using libraries like WiringPi
+Key Features
+Uses memory-mapped I/O for direct hardware access
+Configurable PWM frequency (currently set to 50Hz)
+Adjustable duty cycle control
+Runs on various Raspberry Pi models (with different base addresses)
+Technical Details
+Uses GPIO18 (Physical Pin 12) for PWM output
+Direct register manipulation for precise control
+PWM Range: 0-1000 (0-100% duty cycle)
+Requires root privileges for GPIO access
+Build System
+Uses CMake for build configuration
+Produces a single executable
+No external library dependencies
+Usage
+To build and run the project:
 
-## Build
-
-To build the project, run the following commands:
-
-```sh
-mkdir build
-cd build
-cmake ..
-make
-```
-
-## Run
-
-To run the project, execute the following command:
-
-```sh
-./hello_rpi_world2
-```
-
-## Test
-
-To run the tests, execute the following command:
-
-```sh
-ctest
-```
-
-## Lint
-
-To run cpplint, execute the following command:
-
-```sh
-cpplint --recursive src include lib tests
-```
-
-## Library
-
-The project uses a library named `rpi_pwm_lib`.
-
-## Dependencies
-
-The project depends on `pthread`.
-
-## Contribution
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to contribute.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Safety Considerations
+Requires careful handling of GPIO pins
+Needs proper voltage levels (3.3V max)
+Must run with root privileges
+Different base addresses for different Raspberry Pi models
+Would you like me to elaborate on any specific aspect of the project?
