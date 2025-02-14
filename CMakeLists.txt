@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.20)
 
 # Set the project name
-project(hello_rpi_world2)
-SET (APPLICATION_NAME hello_rpi_world2)
+project(rpi_pwm)
+SET (APPLICATION_NAME rpi_pwm)
 
 SET (APPLICATION_COPYRIGHT_YEARS "2025")
 SET (APPLICATION_VERSION_MAJOR 1)
@@ -31,12 +31,11 @@ OPTION (SERVED_BUILD_DEB "Build DEB package" OFF)
 SET (CMAKE_VERBOSE_MAKEFILE 0) # Use 1 for debugging, 0 for release
 
 # Add include directories
-include_directories(include)
+include_directories(src/include)
 
 # Add subdirectories
 add_subdirectory(src)
-add_subdirectory(lib/hello_rpi_world2)
-add_subdirectory(tests)
+
 
 # Enable testing
 enable_testing()
@@ -49,3 +48,4 @@ set(CMAKE_C_STANDARD_REQUIRED True)
 if (CMAKE_COMPILER_IS_GNUCC OR CMAKE_C_COMPILER_ID MATCHES "Clang")
 	add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
+
